@@ -16,6 +16,6 @@ export const dialogueData = {
   coys: `Oh when the Spurs, go marching in
   I wanna be in that number
   Oh when the Spurs go marching in `,
-  music: `Här står min lp-spelare. Jag älskar lyssna på musik. Speciellt The Beatles`,
+  music: `Här står min lp-spelare. Jag älskar både att lyssna på musik och spela. Speciellt gillar jag att lyssna på The Beatles`,
   exit: `Om du vill lämna William Salomonssons CV-spel så är det bara att stänga ner fliken.`,
 };

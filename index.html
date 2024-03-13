@@ -42,7 +42,6 @@
         align-items: flex-start;
         word-spacing: 0.2rem;
         filter: drop-shadow(0 0 0.75rem rgb(112, 112, 112));
-        /* overflow: auto; */
       }
 
       .ui-text {
@@ -73,7 +72,8 @@
         user-select: none;
       }
     </style>
-    <div id="app">
+
+    <div id="app" onclick="startGame()">
       <div>
         <p class="note">Tap/Click around to move</p>
 
@@ -89,5 +89,24 @@
       <canvas id="game"></canvas>
     </div>
     <script type="module" src="src/main.js"></script>
+    <script>
+      var audio = new Audio("music.mp3");
+
+      function startGame() {
+        if (!audio.paused) {
+          return; // Om musiken redan spelas, avsluta funktionen
+        }
+        audio.loop = false; // Loopa inte musiken
+        audio.play();
+
+        // Starta Kaboom-spelet här
+        // Exempel: Kaboom.start();
+      }
+
+      // Lägg till en lyssnare för 'ended'-händelsen på ljudet
+      audio.addEventListener("ended", function () {
+        audio.currentTime = 0; // Återställ ljudet till början när det är klart
+      });
+    </script>
   </body>
 </html>
