@@ -71,12 +71,26 @@
         color: rgb(238, 238, 238);
         user-select: none;
       }
+
+      .mute-icon {
+        position: absolute;
+        top: 1vh;
+        right: 5%;
+        cursor: pointer;
+        width: 50px;
+        user-select: none;
+      }
     </style>
 
     <div id="app" onclick="startGame()">
       <div>
         <p class="note">Tap/Click around to move</p>
-
+        <img
+          id="muteButton"
+          class="mute-icon"
+          src="music.png"
+          alt="Mute Music"
+        />
         <div id="textbox-container" style="display: none">
           <div id="textbox">
             <p id="dialogue" class="ui-text"></p>
@@ -91,6 +105,8 @@
     <script type="module" src="src/main.js"></script>
     <script>
       var audio = new Audio("music.mp3");
+      var isMuted = false;
+      var muteButton = document.getElementById("muteButton");
 
       function startGame() {
         if (!audio.paused) {
@@ -98,14 +114,23 @@
         }
         audio.loop = false; // Loopa inte musiken
         audio.play();
-
-        // Starta Kaboom-spelet här
-        // Exempel: Kaboom.start();
       }
 
-      // Lägg till en lyssnare för 'ended'-händelsen på ljudet
       audio.addEventListener("ended", function () {
         audio.currentTime = 0; // Återställ ljudet till början när det är klart
+      });
+
+      // Lägg till en lyssnare för klickhändelsen på mute-knappen
+      muteButton.addEventListener("click", function () {
+        if (isMuted) {
+          audio.volume = 1; // Sätt ljudvolymen tillbaka till normal om det var tystat
+          muteButton.src = "music.png"; // Byt ikon till musik
+          isMuted = false;
+        } else {
+          audio.volume = 0; // Tysta ljudet om det var normalt
+          muteButton.src = "muted.png"; // Byt ikon till tyst
+          isMuted = true;
+        }
       });
     </script>
   </body>
