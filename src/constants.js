@@ -3,7 +3,7 @@ export const scaleFactor = 4;
 export const dialogueData = {
   pc: `Detta är min Dator. Jag jobbar mest i JavaScript/TypeScript och Ruby on rails nu för tiden.
   Oavsett språk, så gillar jag programmering. Här är min <a href="https://github.com/1salo" target="_blank">Github</a>!`,
-  cv: `Nämen titta! Här hänger mitt CV. <a href="https://github.com/1salo/CV/blob/main/William-Salomonsson%20CV.pdf" target="_blank">Kika in?</a>
+  cv: `Nämen titta! Här hänger mitt CV. <a href="https://github.com/1salo/CV/blob/main/William_SalomonssonCV.pdf" target="_blank">Kika in?</a>
   Kontakta mig på william-salo@hotmail.com om du har några intressanta jobbmöjligheter`,
   tv: `Där är min TV. Jag kollar mest fotboll. COYS!!`,
   bed: `Här sover jag. Bra idéer kommer oftast när jag ligger i min säng. När en idé slår mig, måste jag ofta skriva ner den, annars kommer jag inte kunna sova eftersom min hjärna är uppslukad av den.`,
